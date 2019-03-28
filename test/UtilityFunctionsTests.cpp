@@ -1,12 +1,12 @@
 #include "catch.hpp"
 #include "UtilityFunctions.hpp"
-#include "RandomNumberGenerator.hpp"
+#include "stubs/FixedNumberGenerator.hpp"
 
 SCENARIO("check createGenerator() function")
 {
-    GIVEN("Generator type RANDOM")
+    GIVEN("Generator type FIBONACCI")
     {
-        auto type = GeneratorType::RANDOM;
+        auto type = GeneratorType::FIBONACCI;
 
         WHEN("Generator is created with provided type")
         {
@@ -35,9 +35,9 @@ SCENARIO("check createGenerator() function")
 
 SCENARIO("check sumGeneratedNumbers() function")
 {
-    GIVEN("RandomNumberGenerator and numberOfValues = 10")
+    GIVEN("FixedNumberGenerator stub and numberOfValues = 10")
     {
-        auto generator = std::make_unique<RandomNumberGenerator>();
+        auto generator = std::make_unique<FixedNumberGenerator>();
         auto numberOfValues = 10;
 
         WHEN("sumGeneratedNumbers is called")
@@ -46,7 +46,7 @@ SCENARIO("check sumGeneratedNumbers() function")
 
             THEN("It should return 420")
             {
-                CHECK(result == 420);
+                CHECK(result == numberOfValues * 42);
             }
         }
     }

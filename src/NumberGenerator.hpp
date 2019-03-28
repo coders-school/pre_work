@@ -2,7 +2,6 @@
 
 enum class GeneratorType
 {
-    RANDOM,
     FIBONACCI,
     PRIME
 };

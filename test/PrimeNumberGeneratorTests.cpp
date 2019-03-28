@@ -14,7 +14,7 @@ SCENARIO("check Prime Number Generator")
                 CHECK(value == 2);
             }
         }
-        WHEN("Ten First values are requested")
+        WHEN("Ten first values are requested")
         {
             std::vector<int> values = {};
             for(int i = 0; i < 10; i++)

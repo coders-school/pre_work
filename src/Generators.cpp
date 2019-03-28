@@ -4,11 +4,9 @@
 
 int main()
 {
-    auto gen = createGenerator(GeneratorType::RANDOM);
-    auto generators = { GeneratorType::RANDOM,
-                        GeneratorType::FIBONACCI,
+    auto generators = { GeneratorType::FIBONACCI,
                         GeneratorType::PRIME };
     std::cout << "Result: " << sumNumbersFromGenerators(generators, 10) << std::endl;
+    [[maybe_unused]] int* leak = new int(4);
     return 0;
 }
-

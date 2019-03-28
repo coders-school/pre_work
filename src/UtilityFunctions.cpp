@@ -5,7 +5,6 @@
 #include "NumberGenerator.hpp"
 #include "FibonacciNumberGenerator.hpp"
 #include "PrimeNumberGenerator.hpp"
-#include "RandomNumberGenerator.hpp"
 
 
 void printNumbers(NumberGenerator & numberGenerator, int numOfNumbers)
@@ -20,8 +19,6 @@ std::unique_ptr<NumberGenerator> createGenerator(GeneratorType type)
 {
     switch(type)
     {
-    case GeneratorType::RANDOM:
-        return std::make_unique<RandomNumberGenerator>();
     case GeneratorType::FIBONACCI:
         return std::make_unique<FibonacciNumberGenerator>();
     case GeneratorType::PRIME:
@@ -42,9 +39,10 @@ int sumGeneratedNumbers(std::unique_ptr<NumberGenerator> gen, int num)
 }
 
 
-int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
+int sumNumbersFromGenerators([[maybe_unused]] std::vector<GeneratorType> const & types, [[maybe_unused]] int num)
 {
-    // TODO: Write a loop that goes over a collection of GeneratorType values (types) and creates generator for given type, 
+    // TODO: Write a loop that goes over a collection of GeneratorType values (types)
+    // and creates generator for given type (use createGenerator function),
     // then sums up all generated values for each type and returns the sum of sums.
     // Use sumGeneratedNumbers to sum generate values for each generator.
     return 42;
