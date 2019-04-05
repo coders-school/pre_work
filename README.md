@@ -7,7 +7,7 @@ We assume that you use Windows. Necessary software:
 ## Software installation for Windows
 - Please refer to this [video instruction on YouTube](https://www.youtube.com/watch?v=neg4zt5mIwk)
 - [Download and install CLion for Windows](https://www.jetbrains.com/clion/download/#section=windows)
-- [Download and install MinGW](https://mingw-w64.org/doku.php/download/mingw-builds)
+- [Download MinGW](https://sourceforge.net/projects/mingw/files/) and follow this [installation tutorial](https://www.jetbrains.com/help/clion/quick-tutorial-on-configuring-clion-on-windows.html#MinGW)
 
 ## Software installation for Linux
 For Linux please install:
