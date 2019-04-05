@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(NumberGenerators)
@@ -16,12 +16,12 @@ include_directories(src)
 if (MSVC)
     add_compile_options(/W4 /WX)
 else()
-    add_compile_options(-Wall -Wextra -pedantic -Werror)
+    add_compile_options(-Wall -Wextra -pedantic -Werror -Wno-unused-parameter -Wno-unused-variable)
 endif()
 
 add_library(${PROJECT_NAME}-lib ${SRC_LIST})
 add_executable(${PROJECT_NAME} src/Generators.cpp)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib -fsanitize=leak)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 
 set(TEST_SRC_LIST
     test/testMain.cpp

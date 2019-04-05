@@ -39,7 +39,7 @@ int sumGeneratedNumbers(std::unique_ptr<NumberGenerator> gen, int num)
 }
 
 
-int sumNumbersFromGenerators([[maybe_unused]] std::vector<GeneratorType> const & types, [[maybe_unused]] int num)
+int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
 {
     // TODO: Write a loop that goes over a collection of GeneratorType values (types)
     // and creates generator for given type (use createGenerator function),
