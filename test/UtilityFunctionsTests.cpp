@@ -69,4 +69,18 @@ SCENARIO("check sumNumbersFromGenerators() function")
             }
         }
     }
+    GIVEN("Invalid generators collection")
+    {
+        std::vector<GeneratorType> collection = { static_cast<GeneratorType>(-1) };
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+            THEN("It should return -1")
+            {
+                CHECK(result == -1);
+            }
+        }
+    }
 }
