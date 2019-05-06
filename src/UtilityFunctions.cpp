@@ -41,6 +41,12 @@ int sumGeneratedNumbers(std::unique_ptr<NumberGenerator> gen, int num)
 
 int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
 {
+    double sum = 0;
+    for(GeneratorType type: types)
+        sum += sumGeneratedNumbers(createGenerator(type), num);
+    return sum;
+
+
     // TODO: Write a loop that goes over a collection of GeneratorType values (types)
     // and creates generator for given type (use createGenerator function),
     // then sums up all generated values for each type and returns the sum of sums.
