@@ -23,8 +23,7 @@ SCENARIO("check Prime Number Generator")
             }
             THEN("It should be 2, 3, 5, 7, 11, 13, 17, 19, 23, 29")
             {
-                // TODO: Fix me
-                std::vector<int> expected = {2, 3, 5, 7, 11, 13, 17, 19, 23, 27};
+                std::vector<int> expected = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
                 CHECK(values == expected);
             }
         }
