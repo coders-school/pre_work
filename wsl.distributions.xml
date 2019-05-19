@@ -62,6 +62,18 @@
           <executable-path>wlinux.exe</executable-path>
           <presentable-name>WLinux</presentable-name>
         </descriptor>
+        <descriptor>
+          <id>PENGWIN</id>
+          <microsoft-id>Pengwin</microsoft-id>
+          <executable-path>pengwin.exe</executable-path>
+          <presentable-name>Pengwin</presentable-name>
+        </descriptor>
+        <descriptor>
+          <id>PENGWIN_ENTERPRISE</id>
+          <microsoft-id>WLE</microsoft-id>
+          <executable-path>wle.exe</executable-path>
+          <presentable-name>Pengwin Enterprise</presentable-name>
+        </descriptor>
       </set>
     </descriptors>
   </component>
