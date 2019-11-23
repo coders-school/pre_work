@@ -1,8 +1,5 @@
 # C++ training pre-work
 The project is configured to run on Windows, Linux and MacOS. It uses CMake >= 3.2
-We assume that you use Windows. Necessary software:
-- CLion (your company should provide you with a license key)
-- MinGW (g++, cmake, make)
 
 ## Software installation for Windows
 - Download and install your favourite IDE - CLion, VS Code (free), QtCreator (free) or any other that can handle CMake builds
@@ -12,7 +9,7 @@ or
 
 ## Software installation for Linux
 For Linux please install:
-- your favourite IDE CLion (paid), VS Code (free), QtCreator (free), vim (free :D) or any other that can handle CMake builds
+- your favourite IDE - CLion (paid), VS Code (free), QtCreator (free), vim (free :D) or any other that can handle CMake builds
 - g++ >= 7 or clang++ >= 5
 - valgrind
 - cmake >= 3.2
