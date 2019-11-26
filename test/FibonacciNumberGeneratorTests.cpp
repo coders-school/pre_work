@@ -21,7 +21,7 @@ SCENARIO("check Fibonacci Number Generator")
             auto previous2 = fng.next();
             auto previous = fng.next();
             auto current = fng.next();
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 9; i++)   // 0 (?), 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 = 143
             {
                 previous2 = previous;
                 previous = current;

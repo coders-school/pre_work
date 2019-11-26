@@ -6,6 +6,7 @@ int main()
 {
     auto generators = { GeneratorType::FIBONACCI,
                         GeneratorType::PRIME };
-    std::cout << "Result: " << sumNumbersFromGenerators(generators, 10) << std::endl;
+    int result = sumNumbersFromGenerators(generators, 10);
+    std::cout << "Result: " << result << std::endl;
     return 0;
 }
