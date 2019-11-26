@@ -19,6 +19,21 @@ SCENARIO("check createGenerator() function")
         }
     }
 
+    GIVEN("Generator type PRIME")
+    {
+        auto type = GeneratorType::PRIME;
+
+        WHEN("Generator is created with provided type")
+        {
+            auto generator = createGenerator(type);
+
+            THEN("It should not be a null pointer")
+            {
+                CHECK(generator);
+            }
+        }
+    }
+
     GIVEN("Not existing generator type")
     {
         auto type = static_cast<GeneratorType>(-1);

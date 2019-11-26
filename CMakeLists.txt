@@ -27,6 +27,7 @@ set(TEST_SRC_LIST
     test/FibonacciNumberGeneratorTests.cpp
     test/PrimeNumberGeneratorTests.cpp
     test/UtilityFunctionsTests.cpp
+    test/GeneratorsTests.cpp
 )
 
 add_executable(${PROJECT_NAME}-ut ${TEST_SRC_LIST})
