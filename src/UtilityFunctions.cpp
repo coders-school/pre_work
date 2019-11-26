@@ -2,6 +2,7 @@
 #include <vector>
 #include <memory>
 #include <stdexcept>
+#include <numeric>
 #include "NumberGenerator.hpp"
 #include "FibonacciNumberGenerator.hpp"
 #include "PrimeNumberGenerator.hpp"
@@ -45,6 +46,17 @@ int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
     // and creates generator for given type (use createGenerator function),
     // then sums up all generated values for each type and returns the sum of sums.
     // Use sumGeneratedNumbers to sum generated values for each generator.
-    return 42;
+//    auto acc = 0;
+//    for (const GeneratorType &g : types)
+//    {
+//        acc += sumGeneratedNumbers(createGenerator(g), num);
+//    }
+//    return acc;
+    return std::accumulate(types.begin(), types.end(), 0,
+                           [&num](auto a, auto b) {
+                               return a + sumGeneratedNumbers(createGenerator(b), num);
+                           }
+    );
+    //ale fajne, jak sie uczylem c++ 15 lat temu, to tak sie nie dało :P
 }
 
