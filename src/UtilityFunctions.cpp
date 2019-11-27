@@ -48,8 +48,7 @@ int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
     // Use sumGeneratedNumbers to sum generated values for each generator.
     try {
         for(const auto& generator:types) {
-            auto new_generator = std::move(createGenerator(generator));
-            sum += sumGeneratedNumbers(std::move(new_generator), num);
+            sum += sumGeneratedNumbers(createGenerator(generator), num);
         }
     } catch (const std::exception& e) {
         std::cout << "ERROR: (" << "curent sum:" << sum << ") reason: " << e.what()<<std::endl;
