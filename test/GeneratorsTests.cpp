@@ -8,9 +8,8 @@ SCENARIO("Functional tests")
 {
     GIVEN("One Fibonacci generator and numberOfValues = 10")
     {
-        std::vector<GeneratorType> collection = {};
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
         auto numberOfValues = 10;
-        collection.push_back(GeneratorType::FIBONACCI);
 
         WHEN("sumNumbersFromGenerators is called")
         {
@@ -18,17 +17,15 @@ SCENARIO("Functional tests")
 
             THEN("It should return same value as sumGeneratedNumbers")
             {
-                CHECK(result == sumGeneratedNumbers(std::move(std::make_unique<FibonacciNumberGenerator>()), numberOfValues));
+                CHECK(result == sumGeneratedNumbers(std::make_unique<FibonacciNumberGenerator>(), numberOfValues));
             }
         }
     }
 
     GIVEN("One Fibonacci generator, one prime generator and numberOfValues = 10")
     {
-        std::vector<GeneratorType> collection = {};
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME};
         auto numberOfValues = 10;
-        collection.push_back(GeneratorType::FIBONACCI);
-        collection.push_back(GeneratorType::PRIME);
 
         WHEN("sumNumbersFromGenerators is called")
         {
@@ -36,19 +33,16 @@ SCENARIO("Functional tests")
 
             THEN("It should return sum of sums for generated numbers")
             {
-                CHECK(result == sumGeneratedNumbers(std::move(std::make_unique<FibonacciNumberGenerator>()), numberOfValues) +
-                      sumGeneratedNumbers(std::move(std::make_unique<PrimeNumberGenerator>()), numberOfValues));
+                CHECK(result == sumGeneratedNumbers(std::make_unique<FibonacciNumberGenerator>(), numberOfValues) +
+                      sumGeneratedNumbers(std::make_unique<PrimeNumberGenerator>(), numberOfValues));
             }
         }
     }
 
     GIVEN("One Fibonacci generator, two prime generators and numberOfValues = 10")
     {
-        std::vector<GeneratorType> collection = {};
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME, GeneratorType::PRIME};
         auto numberOfValues = 10;
-        collection.push_back(GeneratorType::FIBONACCI);
-        collection.push_back(GeneratorType::PRIME);
-        collection.push_back(GeneratorType::PRIME);
 
         WHEN("sumNumbersFromGenerators is called")
         {
@@ -56,8 +50,8 @@ SCENARIO("Functional tests")
 
             THEN("It should return sum of sums for generated numbers")
             {
-                CHECK(result == sumGeneratedNumbers(std::move(std::make_unique<FibonacciNumberGenerator>()), numberOfValues) +
-                      sumGeneratedNumbers(std::move(std::make_unique<PrimeNumberGenerator>()), numberOfValues) + sumGeneratedNumbers(std::move(std::make_unique<PrimeNumberGenerator>()), numberOfValues));
+                CHECK(result == sumGeneratedNumbers(std::make_unique<FibonacciNumberGenerator>(), numberOfValues) +
+                      sumGeneratedNumbers(std::move(std::make_unique<PrimeNumberGenerator>()), numberOfValues) + sumGeneratedNumbers(std::make_unique<PrimeNumberGenerator>(), numberOfValues));
             }
         }
     }
