@@ -75,16 +75,16 @@ SCENARIO("check sumNumbersFromGenerators() function with Not existing generator 
 {
     GIVEN("Empty generators collection and numberOfValues = 1")
     {
-        auto generators = {static_cast<int>(GeneratorType::FIBONACCI),
-                           -1,
-                           static_cast<int>(GeneratorType::PRIME)};
+        auto generators = {GeneratorType::FIBONACCI,
+                           static_cast<GeneratorType>(-1),
+                           GeneratorType::PRIME};
         auto numberOfValues = 1;
 
         WHEN("sumNumbersFromGenerators is called")
         {
             THEN("It should throw logic_error")
             {
-                CHECK_THROWS_AS(sumNumbersFromGenerators((std::vector<GeneratorType> const&)generators , numberOfValues), std::logic_error);
+                CHECK_THROWS_AS(sumNumbersFromGenerators(generators , numberOfValues), std::logic_error);
             }
         }
     }
