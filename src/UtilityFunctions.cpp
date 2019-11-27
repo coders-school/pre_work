@@ -24,7 +24,7 @@ std::unique_ptr<NumberGenerator> createGenerator(GeneratorType type)
     case GeneratorType::PRIME:
         return std::make_unique<PrimeNumberGenerator>();
     default:
-        throw std::logic_error("Invalid number generator type!");
+        throw std::logic_error((std::string("Invalid number generator type! - incorrect genrator type: ")).append(std::to_string((int)type)));
     }
 }
 
@@ -41,10 +41,20 @@ int sumGeneratedNumbers(std::unique_ptr<NumberGenerator> gen, int num)
 
 int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
 {
+    auto sum = 0;
     // TODO: Write a loop that goes over a collection of GeneratorType values (types)
     // and creates generator for given type (use createGenerator function),
     // then sums up all generated values for each type and returns the sum of sums.
     // Use sumGeneratedNumbers to sum generated values for each generator.
-    return 42;
+    try {
+        for(const auto& generator:types) {
+            auto new_generator = std::move(createGenerator(generator));
+            sum += sumGeneratedNumbers(std::move(new_generator), num);
+        }
+    } catch (const std::exception& e) {
+        std::cout << "ERROR: (" << "curent sum:" << sum << ") reason: " << e.what()<<std::endl;
+        sum = -1;
+    }
+    return sum;
 }
 

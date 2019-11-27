@@ -70,3 +70,24 @@ SCENARIO("check sumNumbersFromGenerators() function")
         }
     }
 }
+
+SCENARIO("check sumNumbersFromGenerators() function with Not existing generator type")
+{
+    GIVEN("Empty generators collection and numberOfValues = 1")
+    {
+        auto generators = {(int)GeneratorType::FIBONACCI,
+                           -1,
+                           (int)GeneratorType::PRIME};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators((std::vector<GeneratorType> const&)generators , numberOfValues);
+
+            THEN("It should return -1 - error")
+            {
+                CHECK(result == -1);
+            }
+        }
+    }
+}
