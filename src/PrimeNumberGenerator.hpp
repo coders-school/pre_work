@@ -5,6 +5,7 @@
 struct PrimeNumberGenerator : public NumberGenerator
 {
     int next() override;
+    ~PrimeNumberGenerator() {};
 
 private:
     void appendNextPrime();
