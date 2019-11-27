@@ -9,5 +9,5 @@ enum class GeneratorType
 struct NumberGenerator
 {
     virtual int next() = 0;
+    virtual ~NumberGenerator() {}
 };
-

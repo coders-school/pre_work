@@ -50,7 +50,8 @@ int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
 
     for (auto& type : types)
     {
-        sum += sumGeneratedNumbers(createGenerator(type), num);
+        auto generator = createGenerator(type);
+        sum += sumGeneratedNumbers(std::move(generator), num);
     }
 
     return sum;

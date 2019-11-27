@@ -3,6 +3,7 @@
 
 struct FibonacciNumberGenerator : public NumberGenerator
 {
+    ~FibonacciNumberGenerator() = default;
     int next() override;
 
 private:

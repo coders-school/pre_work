@@ -4,6 +4,7 @@
 
 struct PrimeNumberGenerator : public NumberGenerator
 {
+    ~PrimeNumberGenerator() = default;
     int next() override;
 
 private:
