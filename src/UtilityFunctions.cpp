@@ -24,7 +24,7 @@ std::unique_ptr<NumberGenerator> createGenerator(GeneratorType type)
     case GeneratorType::PRIME:
         return std::make_unique<PrimeNumberGenerator>();
     default:
-        throw std::logic_error("Invalid number generator type! - incorrect genrator type: " + static_cast<int>(type));
+        throw std::logic_error("Invalid number generator type! - incorrect genrator type: " + std::to_string(static_cast<int>(type)));
     }
 }
 
