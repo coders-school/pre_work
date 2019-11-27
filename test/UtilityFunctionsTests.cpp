@@ -69,4 +69,148 @@ SCENARIO("check sumNumbersFromGenerators() function")
             }
         }
     }
+    
+    GIVEN("One FIBONACCI generator collection and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 1")
+            {
+                CHECK(result == 1);
+            }
+        }
+    }
+    
+    GIVEN("One FIBONACCI generator collection and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 1+1+2+3+5")
+            {
+                CHECK(result == 1+1+2+3+5);
+            }
+        }
+    }
+
+    GIVEN("Two FIBONACCI generators and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::FIBONACCI};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 2")
+            {
+                CHECK(result == 2);
+            }
+        }
+    }
+
+    GIVEN("Two FIBONACCI generators and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::FIBONACCI};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 2*(1+1+2+3+5)")
+            {
+                CHECK(result == 2*(1+1+2+3+5));
+            }
+        }
+    }
+
+    GIVEN("One PRIME generator collection and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 2")
+            {
+                CHECK(result == 2);
+            }
+        }
+    }
+    
+    GIVEN("One PRIME generator collection and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return (2+3+5+7+11)")
+            {
+                CHECK(result == (2+3+5+7+11));
+            }
+        }
+    }
+
+    GIVEN("Two PRIME generators and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME, GeneratorType::PRIME};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 4")
+            {
+                CHECK(result == 4);
+            }
+        }
+    }
+
+    GIVEN("Two PRIME generators and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME, GeneratorType::PRIME};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 2*(2+3+5+7+11)")
+            {
+                CHECK(result == 2*(2+3+5+7+11));
+            }
+        }
+    }
+
+    GIVEN("Two PRIME and Two Fibonacci generators and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME, GeneratorType::PRIME};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 4")
+            {
+                CHECK(result == 4);
+            }
+        }
+    }
 }
