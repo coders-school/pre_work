@@ -51,7 +51,7 @@ SCENARIO("Functional tests")
             THEN("It should return sum of sums for generated numbers")
             {
                 CHECK(result == sumGeneratedNumbers(std::make_unique<FibonacciNumberGenerator>(), numberOfValues) +
-                      sumGeneratedNumbers(std::move(std::make_unique<PrimeNumberGenerator>()), numberOfValues) + sumGeneratedNumbers(std::make_unique<PrimeNumberGenerator>(), numberOfValues));
+                      sumGeneratedNumbers(std::make_unique<PrimeNumberGenerator>(), numberOfValues) + sumGeneratedNumbers(std::make_unique<PrimeNumberGenerator>(), numberOfValues));
             }
         }
     }
