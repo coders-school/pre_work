@@ -36,7 +36,7 @@ int sumGeneratedNumbers(std::unique_ptr<NumberGenerator> gen, int num)
     {
         int val = gen->next();
         acc += val;
-        std::cout << "val: " << val << " acc:"<< acc << std::endl;
+        std::cout << "Val: " << val << " acc:"<< acc << std::endl;
     }
     return acc;
 }
