@@ -19,6 +19,21 @@ SCENARIO("check createGenerator() function")
         }
     }
 
+    GIVEN("Generator type PRIME")
+    {
+        auto type = GeneratorType::PRIME;
+
+        WHEN("Generator is created with provided type")
+        {
+            auto generator = createGenerator(type);
+
+            THEN("It should not be a null pointer")
+            {
+                CHECK(generator);
+            }
+        }
+    }
+
     GIVEN("Not existing generator type")
     {
         auto type = static_cast<GeneratorType>(-1);
@@ -50,6 +65,21 @@ SCENARIO("check sumGeneratedNumbers() function")
             }
         }
     }
+    GIVEN("FixedNumberGenerator stub and numberOfValues = 0")
+    {
+        auto generator = std::make_unique<FixedNumberGenerator>();
+        auto numberOfValues = 0;
+
+        WHEN("sumGeneratedNumbers is called")
+        {
+            auto result = sumGeneratedNumbers(std::move(generator), numberOfValues);
+
+            THEN("It should return 0")
+            {
+                CHECK(result == 0);
+            }
+        }
+    }
 }
 
 SCENARIO("check sumNumbersFromGenerators() function")
@@ -66,6 +96,24 @@ SCENARIO("check sumNumbersFromGenerators() function")
             THEN("It should return 0")
             {
                 CHECK(result == 0);
+            }
+        }
+    }
+    GIVEN("Fibonacci and Prime generators collection and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {
+            GeneratorType::FIBONACCI,
+            GeneratorType::PRIME
+        };
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 3")
+            {
+                CHECK(result == 3);
             }
         }
     }
