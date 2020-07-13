@@ -32,5 +32,18 @@ SCENARIO("check Fibonacci Number Generator")
                 }
             }
         }
+        WHEN("Ten first values are requested")
+        {
+            std::vector<int> values = {};
+            for(int i = 0; i < 10; i++)
+            {
+                values.emplace_back(fng.next());
+            }
+            THEN("It should be 1, 1, 2, 3, 5, 8, 13, 21, 34, 55")
+            {
+                std::vector<int> expected = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
+                CHECK(values == expected);
+            }
+        }
     }
 }
