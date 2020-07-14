@@ -70,3 +70,22 @@ SCENARIO("check sumNumbersFromGenerators() function")
         }
     }
 }
+
+SCENARIO("check sumNumbersFromGenerators() function with values")
+{
+    GIVEN("GeneratorType::FIBONACCI and GeneratorType::PRIME collection and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 40")
+            {
+                CHECK(result == 40);
+            }
+        }
+    }
+}
