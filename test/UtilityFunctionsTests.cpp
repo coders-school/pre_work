@@ -52,7 +52,7 @@ SCENARIO("check sumGeneratedNumbers() function")
     }
 }
 
-SCENARIO("check sumNumbersFromGenerators() function")
+SCENARIO("check sumNumbersFromEmptyGenerators() function")
 {
     GIVEN("Empty generators collection and numberOfValues = 1")
     {
@@ -66,6 +66,25 @@ SCENARIO("check sumNumbersFromGenerators() function")
             THEN("It should return 0")
             {
                 CHECK(result == 0);
+            }
+        }
+    }
+}
+
+SCENARIO("check sumNumbersFromFibonacciAndPrimeGenerators() function")
+{
+    GIVEN("Fibonacci and prime generators collection and numberOfValues = 10")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME};
+        auto numberOfValues = 10;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 272")
+            {
+                CHECK(result == 272);
             }
         }
     }
