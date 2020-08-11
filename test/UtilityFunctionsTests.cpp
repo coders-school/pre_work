@@ -70,3 +70,137 @@ SCENARIO("check sumNumbersFromGenerators() function")
         }
     }
 }
+
+SCENARIO("check sumNumbersFromGenerators() function only FIBONACCI(0)")
+{
+    GIVEN("Only FIBONACCI in generators collection and numberOfValues = 0")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
+        auto numberOfValues = 0;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 0")
+            {
+                CHECK(result == 0);
+            }
+        }
+    }
+}
+
+SCENARIO("check sumNumbersFromGenerators() function only FIBONACCI(1)")
+{
+    GIVEN("Only FIBONACCI in generators collection and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 1")
+            {
+                CHECK(result == 1);
+            }
+        }
+    }
+}
+
+
+SCENARIO("check sumNumbersFromGenerators() function only FIBONACCI(5)")
+{
+    GIVEN("Only FIBONACCI in generators collection and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 12")
+            {
+                CHECK(result == 12);
+            }
+        }
+    }
+}
+
+SCENARIO("check sumNumbersFromGenerators() function only PRIME(0)")
+{
+    GIVEN("Only PRIME in generators collection and numberOfValues = 0")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME};
+        auto numberOfValues = 0;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 0")
+            {
+                CHECK(result == 0);
+            }
+        }
+    }
+}
+
+SCENARIO("check sumNumbersFromGenerators() function only PRIME(1)")
+{
+    GIVEN("Only PRIME in generators collection and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 2")
+            {
+                CHECK(result == 2);
+            }
+        }
+    }
+}
+
+SCENARIO("check sumNumbersFromGenerators() function only PRIME(5)")
+{
+    GIVEN("Only PRIME in generators collection and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 28")
+            {
+                CHECK(result == 28);
+            }
+        }
+    }
+}
+
+SCENARIO("check sumNumbersFromGenerators() function FIBONACCI(5) + PRIME(5)")
+{
+    GIVEN("FIBONACCI and PRIME generators in collection and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 40")
+            {
+                CHECK(result == 40);
+            }
+        }
+    }
+}
