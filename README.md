@@ -14,6 +14,20 @@ You can use [this docker image](https://hub.docker.com/r/lukin1000/linux_toolset
 docker pull lukin1000/linux_toolset
 ```
 
+### Running a docker container
+
+```bash
+docker run -v ~/workspace/:/workspace -it lukin1000/linux_toolset:latest /bin/bash
+```
+
+Options:
+
+`-v /path/to/host/dir:/path/to/docker/dir` - directory mapping
+`lukin1000/linux_toolset:latest` - the name of image
+`/bin/bash` - the name of the command to be executed on the container. Bash simply gives you access to the terminal. 
+
+It's useful to have an alias to above command.
+
 If you don't have docker please install a necessary software as described below.
 
 ## Software installation for Windows
