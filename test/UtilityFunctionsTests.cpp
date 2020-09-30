@@ -69,4 +69,73 @@ SCENARIO("check sumNumbersFromGenerators() function")
             }
         }
     }
+    GIVEN("One fibonnacci generator and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return result of (1+1+2+3+5)")
+            {
+                CHECK(result == (1+1+2+3+5));
+            }
+        }
+    }
+
+    GIVEN("two fibonnacci generator and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::FIBONACCI};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return result of ((1+1+2+3+5)*2)")
+            {
+                CHECK(result == ((1+1+2+3+5)*2));
+            }
+        }
+    }
+
+    GIVEN("One prime numbers generator and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::PRIME};
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return result of (2+3+5+7+11)")
+            {
+                CHECK(result == (2+3+5+7+11));
+            }
+        }
+    }
+
+    GIVEN("2 prime numbers generator, 3 fibonacci generators and numberOfValues = 5")
+    {
+        std::vector<GeneratorType> collection = {
+            GeneratorType::PRIME,
+            GeneratorType::PRIME,
+            GeneratorType::FIBONACCI,
+            GeneratorType::FIBONACCI,
+            GeneratorType::FIBONACCI
+            };
+        auto numberOfValues = 5;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return result of (2+3+5+7+11)*2 + (1+1+2+3+5)*3")
+            {
+                CHECK(result == ((2+3+5+7+11)*2 + (1+1+2+3+5)*3));
+            }
+        }
+    }
 }
