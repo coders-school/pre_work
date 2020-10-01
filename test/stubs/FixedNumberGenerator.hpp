@@ -4,5 +4,6 @@
 struct FixedNumberGenerator : public NumberGenerator
 {
     int next() override { return 42; }
+    virtual ~FixedNumberGenerator() = default;
 };
 
