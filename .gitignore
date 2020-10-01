@@ -1,0 +1,12 @@
+.cproject
+.project
+.settings/
+*.txt
+CMakeFiles/
+Makefile
+*NumberGenerators
+*NumberGenerators-ut
+cmake_install.cmake
+*.a
+*.md
+*.cmake

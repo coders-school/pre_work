@@ -45,6 +45,13 @@ int sumNumbersFromGenerators(std::vector<GeneratorType> const & types, int num)
     // and creates generator for given type (use createGenerator function),
     // then sums up all generated values for each type and returns the sum of sums.
     // Use sumGeneratedNumbers to sum generated values for each generator.
-    return 42;
+
+	unsigned int sum_of_sums = 0;
+
+	for(auto & element : types)
+	{
+		sum_of_sums += sumGeneratedNumbers(createGenerator(GeneratorType::FIBONACCI), num);
+	}
+    return sum_of_sums;
 }
 
