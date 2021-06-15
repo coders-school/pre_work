@@ -69,4 +69,36 @@ SCENARIO("check sumNumbersFromGenerators() function")
             }
         }
     }
+
+    GIVEN("Generators collection with Fibonacci and PrimeNumber generator and numberOfValues = 1")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME};
+        auto numberOfValues = 1;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 3")
+            {
+                CHECK(result == 3);
+            }
+        }
+    }
+
+    GIVEN("Generators collection with Fibonacci and PrimeNumber generator and numberOfValues = 3")
+    {
+        std::vector<GeneratorType> collection = {GeneratorType::FIBONACCI, GeneratorType::PRIME};
+        auto numberOfValues = 3;
+
+        WHEN("sumNumbersFromGenerators is called")
+        {
+            auto result = sumNumbersFromGenerators(collection, numberOfValues);
+
+            THEN("It should return 14")
+            {
+                CHECK(result == 14);
+            }
+        }
+    }
 }
