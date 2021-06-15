@@ -1,14 +1,14 @@
 # C++ training pre-work
 
-The project is configured to run on Windows, Linux and MacOS. It uses CMake >= 3.6
+The project is configured to run on Windows, Linux and macOS. It uses CMake >= 3.6
 
 ## Software for remote sessions
 
-I recommend to use **Visual Studio Code** with **Live Share Extension Pack** installed. It will allow us to have a remote Coding Dojo / Mob Programming session and to have an audio chat during this session. [Take a look on this extension in action](https://visualstudio.microsoft.com/pl/services/live-share/). In case you do not have it or do not want it, you will just have to do group tasks on your own.
+I recommend using **Visual Studio Code** with **Live Share Extension Pack** installed. It will allow us to have a remote Coding Dojo / Mob Programming session and to have an audio chat during this session. [Take a look at this extension in action](https://visualstudio.microsoft.com/pl/services/live-share/). In case you do not have it or do not want it, you will just have to do group tasks on your own.
 
 ## Docker 
 
-You can use [this docker image](https://hub.docker.com/r/lukin1000/linux_toolset). It is Ubuntu based linux with all necessary applications installed. Full support of C++17 is provided.
+You can use [this docker image](https://hub.docker.com/r/lukin1000/linux_toolset). It is Ubuntu-based Linux with all necessary applications installed. Full support of C++17 is provided.
 
 ```bash
 docker pull lukin1000/linux_toolset
@@ -27,9 +27,9 @@ Options:
 * `lukin1000/linux_toolset:latest` - the name of image
 * `/bin/bash` - the name of the command to be executed on the container. Bash simply gives you access to the terminal. 
 
-It's useful to have an alias to above command.
+It's useful to have an alias to the above command.
 
-If you don't have docker please install a necessary software as described below.
+If you don't have docker please install the necessary software as described below.
 
 ## Software installation for Windows
 
@@ -38,7 +38,7 @@ If you don't have docker please install a necessary software as described below.
 or 
 - Download and install Visual Studio Community Edition (IDE + MSVC compiler)
 
-## Software installation for Linux/MacOS
+## Software installation for Linux/macOS
 
 For Linux please install:
 - your favourite IDE - CLion (paid), Visual Studio Code (free), QtCreator (free), vim or any other that can handle CMake builds
@@ -51,13 +51,13 @@ For Linux please install:
 
 ## Online IDE
 
-If you have any problems with setting up an environment you can use [Repl.it](https://repl.it). It is an online IDE that can handle multiple files projects and has a linux terminal available.
+If you have any problems with setting up an environment you can use [Repl.it](https://repl.it). It is an online IDE that can handle multiple files projects and has a Linux terminal available.
 
 ## Possible problems on Windows
 
-If you can build `NumberGenerators` target, but you cannot build `NumberGenerators-ut` target it probably means that MinGW does not properly support exceptions on your machine. Please reinstall MinGW and select another type of exception implementation in `Exception` field.
+If you can build the `NumberGenerators` target, but you cannot build the `NumberGenerators-ut` target it probably means that MinGW does not properly support exceptions on your machine. Please reinstall MinGW and select another type of exception implementation in the `Exception` field.
 
-If MinGW is problematic on your machine, feel free to use MSVC compiler. In fact, compiler type does not really matter. Just make sure it supports C++17.
+If MinGW is problematic on your machine, feel free to use the MSVC compiler. Compiler type does not matter. Just make sure it supports C++17.
 
 Also if CLion is problematic, you can use Visual Studio Community Edition.
 
@@ -77,7 +77,7 @@ You need to be able to compile both `NumberGenerators` and `NumberGenerators-ut`
 
 3. Run `NumberGenerators` target. `Result: 42` should be displayed on the output.
 4. Run `NumberGenerators-ut` target.
-5. Fix mistakes in unit tests. In order to do that you need to implement `sumNumbersFromGenerators()` function to make all UTs pass. You can add more UTs if you wish.
+5. Fix mistakes in unit tests. To do that you need to implement the `sumNumbersFromGenerators()` function to make all UTs pass. You can add more UTs if you wish.
 6. Commit, push and create a Pull Request to inform me about your successful implementation and environment setup. If you do not have and do not want to have a GitHub account just send me your solution (diff only) via email to *lukasz@coders.school*
 
-After completion of this assignment you have everything set up and ready for a training.
+After completion of this assignment, you have everything set up and ready for training.
